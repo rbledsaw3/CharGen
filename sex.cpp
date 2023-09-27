@@ -2,7 +2,10 @@
 #include "roll.h"
 
 
-Sex::Sex(const std::string &name, const std::string &gender) : name(name), gender(gender) {}
+Sex::Sex(const std::string& name, const std::string& gender, const Stats& bonuses) :
+    name(name),
+    gender(gender),
+    bonuses(bonuses) {}
 
 const std::string &Sex::getName() const {
     return name;
@@ -10,6 +13,10 @@ const std::string &Sex::getName() const {
 
 const std::string &Sex::getGender() const {
     return gender;
+}
+
+const Stats& Sex:: getBonuses() const {
+    return bonuses;
 }
 
 const std::vector<std::string>& Sex::getFemaleNames() {
@@ -1540,9 +1547,9 @@ Sex Sex::rollRandomName() {
 
     if (genderChoice == 1) {
         int index = roll(0, getFemaleNames().size() - 1);
-        return Sex(getFemaleNames()[index], "Female");
+        return Sex(getFemaleNames()[index], "Female", {-2, -2, -2, 2, 0, 4});
     } else {
         int index = roll(0, getMaleNames().size() - 1);
-        return Sex(getMaleNames()[index], "Male");
+        return Sex(getMaleNames()[index], "Male", {2, 0, 0, 0, 2, 0});
     }
 }
