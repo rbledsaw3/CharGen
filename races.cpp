@@ -1,0 +1,16 @@
+Astari
+Bardik
+Confed
+Demi-Giant
+Dwarf
+Elf
+Ghuls
+Gnome
+Half-Elf
+Half-Orc
+Halfling
+Human
+Lunari
+Orc
+Solari
+Swertling
