@@ -19,6 +19,7 @@ public:
     static const std::vector<std::string>& getFemaleNames();
 
     static Sex rollRandomName();
+    static std::string rollRandomName(const std::string& gender);
 
 private:
     std::string name;

@@ -1553,3 +1553,13 @@ Sex Sex::rollRandomName() {
         return Sex(getMaleNames()[index], "Male", {2, 0, 0, 0, 2, 0});
     }
 }
+
+std::string Sex::rollRandomName(const std::string& gender) {
+    if (gender == "Male") {
+        int index = roll(1, getMaleNames().size()) - 1;
+        return getMaleNames()[index];
+    } else {
+        int index = roll(1, getFemaleNames().size()) - 1;
+        return getFemaleNames()[index];
+    }
+}

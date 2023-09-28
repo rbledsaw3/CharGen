@@ -18,4 +18,29 @@ class Cls {
         int hitDie;
 };
 
+extern const Cls Alchemist;
+extern const Cls Amazon;
+extern const Cls AnimalTrainer;
+extern const Cls Assassin;
+extern const Cls Barbarian;
+extern const Cls Bard;
+extern const Cls Beggar;
+extern const Cls Berzerker;
+extern const Cls BountyHunter;
+extern const Cls Cleric;
+extern const Cls Druid;
+extern const Cls Fighter;
+extern const Cls Illusionist;
+extern const Cls Knight;
+extern const Cls MagicUser;
+extern const Cls Monk;
+extern const Cls Paladin;
+extern const Cls Ranger;
+extern const Cls Sage;
+extern const Cls Samurai;
+extern const Cls Thief;
+extern const Cls Valkyrie;
+extern const Cls Viking;
+extern const Cls Witch;
+
 #endif // CLS_H

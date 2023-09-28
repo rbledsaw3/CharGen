@@ -19,4 +19,21 @@ class Race {
         std::vector<std::string> preferredClasses;
 };
 
+extern const Race Astari;
+extern const Race Bardik;
+extern const Race Confed;
+extern const Race DemiGiant;
+extern const Race Dwarf;
+extern const Race Elf;
+extern const Race Ghuls;
+extern const Race Gnome;
+extern const Race HalfElf;
+extern const Race HalfOrc;
+extern const Race Halfling;
+extern const Race Human;
+extern const Race Lunari;
+extern const Race Orc;
+extern const Race Solari;
+extern const Race Swertling;
+
 #endif // RACES_H

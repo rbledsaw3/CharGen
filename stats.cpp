@@ -137,3 +137,13 @@ Stats rolledStats(const Stats &stats) {
     newStats.setCharisma(roll(3, 6) + stats.getCharisma());
     return newStats;
 }
+
+std::ostream& operator<<(std::ostream& out, const Stats& stats) {
+    out << "Strength: " << stats.getStrength() << std::endl;
+    out << "Dexterity: " << stats.getDexterity() << std::endl;
+    out << "Constitution: " << stats.getConstitution() << std::endl;
+    out << "Intelligence: " << stats.getIntelligence() << std::endl;
+    out << "Wisdom: " << stats.getWisdom() << std::endl;
+    out << "Charisma: " << stats.getCharisma() << std::endl;
+    return out;
+}
