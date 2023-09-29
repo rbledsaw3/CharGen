@@ -1546,10 +1546,10 @@ Sex Sex::rollRandomName() {
     int genderChoice = roll(1, 2);
 
     if (genderChoice == 1) {
-        int index = roll(0, getFemaleNames().size() - 1);
+        int index = roll(1, getFemaleNames().size()) - 1;
         return Sex(getFemaleNames()[index], "Female", {-2, -2, -2, 2, 0, 4});
     } else {
-        int index = roll(0, getMaleNames().size() - 1);
+        int index = roll(1, getMaleNames().size()) - 1;
         return Sex(getMaleNames()[index], "Male", {2, 0, 0, 0, 2, 0});
     }
 }
