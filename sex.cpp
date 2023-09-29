@@ -1563,3 +1563,10 @@ std::string Sex::rollRandomName(const std::string& gender) {
         return getFemaleNames()[index];
     }
 }
+
+std::ostream& operator<<(std::ostream& out, const Sex& sex) {
+    out << "Name: " << sex.getName() << std::endl;
+    out << "Sex: " << sex.getGender() << std::endl;
+    return out;
+
+}

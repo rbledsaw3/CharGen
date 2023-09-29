@@ -1,6 +1,7 @@
 #ifndef SEX_H
 #define SEX_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include "stats.h"
@@ -26,5 +27,7 @@ private:
     std::string gender;
     Stats bonuses;
 };
+
+std::ostream& operator<<(std::ostream &os, const Sex &sex);
 
 #endif // SEX_H
