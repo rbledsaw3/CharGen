@@ -2,7 +2,8 @@
 #include "roll.h"
 
 
-Sex::Sex(const std::string& name, const std::string& gender, const Stats& bonuses) :
+Sex::Sex(const std::string& name, const std::string& gender,
+        const Stats& bonuses) :
     name(name),
     gender(gender),
     bonuses(bonuses) {}
@@ -1568,5 +1569,4 @@ std::ostream& operator<<(std::ostream& out, const Sex& sex) {
     out << "Name: " << sex.getName() << std::endl;
     out << "Sex: " << sex.getGender() << std::endl;
     return out;
-
 }

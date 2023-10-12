@@ -1,5 +1,5 @@
-#ifndef SEX_H
-#define SEX_H
+#ifndef SRC_SEX_H_
+#define SRC_SEX_H_
 
 #include <iostream>
 #include <string>
@@ -7,8 +7,9 @@
 #include "stats.h"
 
 class Sex {
-public:
-    Sex(const std::string &name, const std::string &gender, const Stats &bonuses);
+ public:
+    Sex(const std::string &name, const std::string &gender,
+            const Stats &bonuses);
 
     const std::string &getName() const;
 
@@ -22,7 +23,7 @@ public:
     static Sex rollRandomName();
     static std::string rollRandomName(const std::string& gender);
 
-private:
+ private:
     std::string name;
     std::string gender;
     Stats bonuses;
@@ -30,4 +31,4 @@ private:
 
 std::ostream& operator<<(std::ostream &os, const Sex &sex);
 
-#endif // SEX_H
+#endif  // SRC_SEX_H_

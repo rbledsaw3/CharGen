@@ -9,8 +9,8 @@ Stats::Stats() {
     this->charisma = 0;
 }
 
-Stats::Stats(const int &strength, const int &dexterity, const int &constitution, const int &intelligence,
-             const int &wisdom, const int &charisma) {
+Stats::Stats(const int &strength, const int &dexterity, const int &constitution,
+        const int &intelligence, const int &wisdom, const int &charisma) {
     this->strength = strength;
     this->dexterity = dexterity;
     this->constitution = constitution;
@@ -67,8 +67,9 @@ void Stats::setCharisma(const int &charisma) {
     this->charisma = charisma;
 }
 
-void Stats::setStats(const int &strength, const int &dexterity, const int &constitution, const int &intelligence,
-                     const int &wisdom, const int &charisma) {
+void Stats::setStats(const int &strength, const int &dexterity,
+        const int &constitution, const int &intelligence,
+        const int &wisdom, const int &charisma) {
     this->strength = strength;
     this->dexterity = dexterity;
     this->constitution = constitution;
@@ -115,8 +116,9 @@ Stats rolledStats() {
     return stats;
 }
 
-Stats rolledStats(const int &strength, const int &dexterity, const int &constitution, const int &intelligence,
-                  const int &wisdom, const int &charisma) {
+Stats rolledStats(const int &strength, const int &dexterity,
+        const int &constitution, const int &intelligence,
+        const int &wisdom, const int &charisma) {
     Stats stats;
     stats.setStrength(roll(3, 6) + strength);
     stats.setDexterity(roll(3, 6) + dexterity);

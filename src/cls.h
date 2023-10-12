@@ -1,18 +1,18 @@
-#ifndef CLS_H
-#define CLS_H
+#ifndef SRC_CLS_H_
+#define SRC_CLS_H_
 
 #include <string>
 #include "stats.h"
 
 class Cls {
-    public:
+ public:
         Cls(const std::string& name, const Stats& minStats, const int& hitDie);
 
         const std::string& getName() const;
         const Stats& getMinStats() const;
         const int& getHitDie() const;
 
-    private:
+ private:
         std::string name;
         Stats minStats;
         int hitDie;
@@ -43,4 +43,4 @@ extern const Cls Valkyrie;
 extern const Cls Viking;
 extern const Cls Witch;
 
-#endif // CLS_H
+#endif  // SRC_CLS_H_

@@ -1,16 +1,16 @@
-#ifndef STATS_H
-#define STATS_H
+#ifndef SRC_STATS_H_
+#define SRC_STATS_H_
 
 #include <iostream>
 #include "roll.h"
 
 class Stats {
-public:
+ public:
     // Constructors
     Stats();
     Stats(const int &strength, const int &dexterity, const int &constitution,
           const int &intelligence, const int &wisdom, const int &charisma);
-    
+
     // Getters
     int getStrength() const;
     int getDexterity() const;
@@ -27,14 +27,15 @@ public:
     void setWisdom(const int &wisdom);
     void setCharisma(const int &charisma);
 
-    void setStats(const int &strength, const int &dexterity, const int &constitution,
-                  const int &intelligence, const int &wisdom, const int &charisma);
+    void setStats(const int &strength, const int &dexterity,
+            const int &constitution, const int &intelligence,
+            const int &wisdom, const int &charisma);
 
     void setStats(const Stats &stats);
     void addStats(const Stats &stats);
     void subtractStats(const Stats &stats);
 
-private:
+ private:
     int strength;
     int dexterity;
     int constitution;
@@ -45,10 +46,11 @@ private:
 
 // Global functions for rolling stats
 Stats rolledStats();
-Stats rolledStats(const int &strength, const int &dexterity, const int &constitution, 
-                  const int &intelligence, const int &wisdom, const int &charisma);
+Stats rolledStats(const int &strength, const int &dexterity,
+        const int &constitution, const int &intelligence,
+        const int &wisdom, const int &charisma);
 Stats rolledStats(const Stats &stats);
 
 std::ostream& operator<<(std::ostream& os, const Stats& stats);
 
-#endif // STATS_H
+#endif  // SRC_STATS_H_
