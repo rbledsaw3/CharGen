@@ -1,4 +1,4 @@
-FROM jfloff/apline-python
+FROM jfloff/alpine-python:3.7-slim
 
 RUN pip install --upgrade pip
 RUN pip install cpplint
