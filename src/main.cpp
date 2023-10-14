@@ -9,6 +9,9 @@
 
 
 int main() {
+    std::cout << roll<1, 6>() << std::endl;
+    std::cout << roll<2, 6>() << std::endl;
+    std::cout << roll<3, 6>() << std::endl;
     std::cout << "Random female name: " << Sex::rollRandomName("Female")
         << std::endl;
     std::cout << "Random male name: " << Sex::rollRandomName("Male")
