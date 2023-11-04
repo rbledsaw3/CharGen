@@ -52,10 +52,8 @@ void test_roll() {
 }
 
 void test_stats() {
-
-    // TODO: TEST STATS
-
-}   
+    // TODO(rbledsaw3): TEST STATS
+}
 
 int main() {
     test_roll();
