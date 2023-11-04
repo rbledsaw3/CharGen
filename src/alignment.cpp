@@ -19,7 +19,7 @@ std::string getalignment(int index) {
 }
 
 std::string rollrandomalignment() {
-    return getalignment(roll(1,9));
+    return getalignment(roll(1, 9));
 }
 
-// TODO: Add morality and ethics
+// TODO(rbledsaw3): Add morality and ethics
