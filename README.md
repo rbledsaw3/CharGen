@@ -2,6 +2,32 @@
 
 This framework enables easy generation of races, classes, and PC/NPCs.
 
+# Table of Contents
+1. [RPG Character Generation Framework](#rpg-character-generation-framework)
+2. [Dice Rolling Mechanism](#dice-rolling-mechanism)
+   - [Features](#features)
+   - [Usage](#usage)
+3. [Character Stats](#character-stats)
+   - [Features](#features-1)
+   - [Implementation Details](#implementation-details)
+   - [Usage Example](#usage-example)
+4. [Sex and Gender Attributes](#sex-and-gender-attributes)
+   - [Features](#features-2)
+   - [Implementation Details](#implementation-details-1)
+   - [Random Name Generation Logic](#random-name-generation-logic)
+   - [Usage Example](#usage-example-1)
+5. [Race Attributes and Preferences](#race-attributes-and-preferences)
+   - [Features](#features-3)
+   - [Available Races and Their Attributes](#available-races-and-their-attributes)
+   - [Usage](#usage-1)
+6. [Class System](#class-system)
+   - [Classes Defined](#classes-defined)
+   - [Class Attributes](#class-attributes)
+   - [Getting Started](#getting-started)
+7. [TODO](#todo)
+8. [Contribution](#contribution)
+9. [Author](#author)
+
 ## Dice Rolling Mechanism
 
 The `roll.cpp` module is responsible for simulating dice rolls, a fundamental mechanism in RPG systems for determining the outcomes of various actions, such as combat, skill checks, and more.
