@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../src/roll.h"
+#include "../src/stats.h"
 
 void test_roll() {
     // Test 1: Check bounds
@@ -49,6 +50,12 @@ void test_roll() {
         << "If you see lines with \'Error: dice ...\' above, this test passed."
         << std::endl;
 }
+
+void test_stats() {
+
+    // TODO: TEST STATS
+
+}   
 
 int main() {
     test_roll();
