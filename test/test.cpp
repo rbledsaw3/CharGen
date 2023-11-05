@@ -6,7 +6,7 @@ void test_roll() {
     // Test 1: Check bounds
     for (int i = 0; i < 10000; ++i) {
         int result = roll<3, 6>();
-        if (result < 3 || result > 18) {
+        if ((result < 3) || (result > 18)) {
             std::cout << "Test 1 Failed: Value out of range. Result: "
                 << result << std::endl;
             return;
@@ -22,7 +22,7 @@ void test_roll() {
         total += roll<1, 6>();
     }
     double average = static_cast<double>(total) / rolls;
-    if (average < 3.4 || average > 3.6) {
+    if ((average < 3.4) || (average > 3.6)) {
         std::cout <<
             "Test 2 Failed: Distribution does not appear to be uniform. Mean: "
             << average << std::endl;
