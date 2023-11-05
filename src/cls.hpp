@@ -1,5 +1,5 @@
-#ifndef SRC_CLS_H_
-#define SRC_CLS_H_
+#ifndef SRC_CLS_HPP_
+#define SRC_CLS_HPP_
 
 #include <string>
 #include "stats.hpp"
@@ -43,4 +43,4 @@ extern const Cls Valkyrie;
 extern const Cls Viking;
 extern const Cls Witch;
 
-#endif  // SRC_CLS_H_
+#endif  // SRC_CLS_HPP_

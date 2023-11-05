@@ -1,5 +1,5 @@
-#ifndef SRC_RACES_H_
-#define SRC_RACES_H_
+#ifndef SRC_RACES_HPP_
+#define SRC_RACES_HPP_
 
 #include <string>
 #include <vector>
@@ -37,4 +37,4 @@ extern const Race Orc;
 extern const Race Solari;
 extern const Race Swertling;
 
-#endif  // SRC_RACES_H_
+#endif  // SRC_RACES_HPP_

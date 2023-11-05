@@ -1,5 +1,5 @@
-#ifndef SRC_ROLL_H_
-#define SRC_ROLL_H_
+#ifndef SRC_ROLL_HPP_
+#define SRC_ROLL_HPP_
 
 #include <iostream>
 #include <random>
@@ -43,4 +43,4 @@ int roll(int diceQty, int diceSides);
 
 std::ostream& operator<<(std::ostream &out, const RollResultProxy &roll);
 
-#endif  // SRC_ROLL_H_
+#endif  // SRC_ROLL_HPP_

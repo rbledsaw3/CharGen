@@ -1,5 +1,5 @@
-#ifndef SRC_STATS_H_
-#define SRC_STATS_H_
+#ifndef SRC_STATS_HPP_
+#define SRC_STATS_HPP_
 
 #include <iostream>
 #include "roll.hpp"
@@ -53,4 +53,4 @@ Stats rolledStats(const Stats &stats);
 
 std::ostream& operator<<(std::ostream& os, const Stats& stats);
 
-#endif  // SRC_STATS_H_
+#endif  // SRC_STATS_HPP_

@@ -1,5 +1,5 @@
-#ifndef SRC_SEX_H_
-#define SRC_SEX_H_
+#ifndef SRC_SEX_HPP_
+#define SRC_SEX_HPP_
 
 #include <iostream>
 #include <string>
@@ -1550,4 +1550,4 @@ class Sex {
 
 std::ostream& operator<<(std::ostream &os, const Sex &sex);
 
-#endif  // SRC_SEX_H_
+#endif  // SRC_SEX_HPP_
