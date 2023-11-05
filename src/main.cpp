@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "roll.h"
-#include "sex.h"
-#include "races.h"
-#include "stats.h"
-#include "cls.h"
+#include "roll.hpp"
+#include "sex.hpp"
+#include "races.hpp"
+#include "stats.hpp"
+#include "cls.hpp"
 
 
 int main() {

@@ -1,5 +1,5 @@
-#include "sex.h"
-#include "roll.h"
+#include "sex.hpp"
+#include "roll.hpp"
 
 
 Sex::Sex(const std::string& name, const std::string& gender,
@@ -21,14 +21,14 @@ const Stats& Sex:: getBonuses() const {
 }
 
 Sex Sex::rollRandomName() {
-    int genderChoice = roll<1, 2>();
+    int genderChoice = roll(1, 2);
 
     if (genderChoice == 1) {
-        int index = roll<1, N_MALE_NAMES>() - 1;
+        int index = roll(1, N_MALE_NAMES) - 1;
         return Sex(std::string(getMaleNames()[index]),
                 "Female", {-2, -2, -2, 2, 0, 4});
     } else {
-        int index = roll<1, N_FEMALE_NAMES>() - 1;
+        int index = roll(1, N_FEMALE_NAMES) - 1;
         return Sex(std::string(getFemaleNames()[index]),
                 "Male", {2, 0, 0, 0, 2, 0});
     }
@@ -36,10 +36,10 @@ Sex Sex::rollRandomName() {
 
 std::string Sex::rollRandomName(const std::string& gender) {
     if (gender == "Male") {
-        int index = roll<1, N_MALE_NAMES>() - 1;
+        int index = roll(1, N_MALE_NAMES) - 1;
         return std::string(getMaleNames()[index]);
     } else {
-        int index = roll<1, N_FEMALE_NAMES>() - 1;
+        int index = roll(1, N_FEMALE_NAMES) - 1;
         return std::string(getFemaleNames()[index]);
     }
 }

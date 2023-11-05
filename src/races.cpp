@@ -1,4 +1,4 @@
-#include "races.h"
+#include "races.hpp"
 
 Race::Race(const std::string& name, const Stats& bonuses,
         const std::vector<std::string>& preferredClasses) :

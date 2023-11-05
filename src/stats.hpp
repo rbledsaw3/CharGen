@@ -2,7 +2,7 @@
 #define SRC_STATS_H_
 
 #include <iostream>
-#include "roll.h"
+#include "roll.hpp"
 
 class Stats {
  public:

@@ -1,4 +1,4 @@
-#include "cls.h"
+#include "cls.hpp"
 
 Cls::Cls(const std::string& name, const Stats& minStats, const int& hitDie) :
     name(name),

@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "stats.h"
+#include "stats.hpp"
 
 class Race {
  public:

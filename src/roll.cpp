@@ -1,4 +1,4 @@
-#include "roll.h"
+#include "roll.hpp"
 
 int roll(int diceQty, int diceSides) {
     if (diceQty < 1) {

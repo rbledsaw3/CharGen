@@ -1,6 +1,6 @@
 #include <array>
-#include "alignment.h"
-#include "roll.h"
+#include "alignment.hpp"
+#include "roll.hpp"
 
 std::array<std::string, 9> alignment = {
     "lawful good",

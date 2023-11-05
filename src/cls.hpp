@@ -2,7 +2,7 @@
 #define SRC_CLS_H_
 
 #include <string>
-#include "stats.h"
+#include "stats.hpp"
 
 class Cls {
  public:

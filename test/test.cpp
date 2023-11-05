@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../src/roll.h"
-#include "../src/stats.h"
+#include "../src/roll.hpp"
+#include "../src/stats.hpp"
 
 void test_roll() {
     // Test 1: Check bounds

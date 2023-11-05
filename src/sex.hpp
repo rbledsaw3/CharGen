@@ -5,7 +5,7 @@
 #include <string>
 #include <string_view>
 #include <array>
-#include "stats.h"
+#include "stats.hpp"
 
 #define N_MALE_NAMES 1000
 #define N_FEMALE_NAMES 511
