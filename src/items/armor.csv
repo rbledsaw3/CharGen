@@ -1,14 +1,14 @@
-Armor,BaseCost,AC,Equip,Restrict
+Armor,Base_Cost,AC,Restriction
 Robes,150,1,1,None
 Scale Mail,100,4,1,Max for Barbarian
 Ring Mail,200,5,1,Max for Ninja
-Chain Mail,400,6,1,Max for Archer and Robber
-Splint Mail,600,7,1,Max for Cleric, Ranger
-Plate Mail,1000,8,1,Only Knight and Paladin
+Chain Mail,400,6,1,Max for Archer Robber
+Splint Mail,600,7,1,Max for Cleric Ranger
+Plate Mail,1000,8,1,Only Knight Paladin
 Plate Armor,2000,10,1,Only Paladin
 Cloak,150,1,1,None
 Cape,200,1,1,None
-Shield,100,4,1H,No Druid, Ninja, Sorcerer, Archer
+Shield,100,4,1,No 2H Weapon, No Druid Ninja Sorcerer Archer
 Helm,60,2,1,None
 Gauntlets,100,1,1,None
 Boots,40,1,1,None

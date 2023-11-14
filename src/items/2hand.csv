@@ -1,0 +1,13 @@
+Weapon,Base_Cost,Mod,Equip,Restrictions
+Bardiche,200,4d4,No Cleric Sorcerer Druid
+Glaive,80,4d3,No Cleric Sorcerer Druid
+Halberd,250,3d6,No Cleric Sorcerer Druid
+Pike,150,2d8,No Cleric Sorcerer Druid
+Flamberge,400,4d5,Only Archer Knight Paladin Ranger
+Trident,100,2d6,No Cleric Sorcerer Druid
+Staff,40,2d4,None
+Hammer,120,2d5,No Sorcerer
+Naginata,300,5d3,Only Knight Ninja
+Battle Axe,100,3d5,No Cleric Sorcerer Druid Ninja
+Grand Axe,200,3d6,No Cleric Sorcerer Druid Ninja
+Great Axe,300,3d7,No Cleric Sorcerer Druid Ninja
