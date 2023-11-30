@@ -1,21 +1,21 @@
 #ifndef SRC_CLS_HPP_
 #define SRC_CLS_HPP_
 
-#include <string>
 #include "stats.hpp"
+#include <string>
 
 class Cls {
- public:
-        Cls(const std::string& name, const Stats& minStats, const int& hitDie);
+  public:
+    Cls(const std::string& name, const Stats& minStats, const int& hitDie);
 
-        const std::string& getName() const;
-        const Stats& getMinStats() const;
-        const int& getHitDie() const;
+    const std::string& getName() const;
+    const Stats& getMinStats() const;
+    const int& getHitDie() const;
 
- private:
-        std::string name;
-        Stats minStats;
-        int hitDie;
+  private:
+    std::string name;
+    Stats minStats;
+    int hitDie;
 };
 
 extern const Cls Alchemist;

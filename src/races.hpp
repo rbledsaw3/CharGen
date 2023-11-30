@@ -1,23 +1,22 @@
 #ifndef SRC_RACES_HPP_
 #define SRC_RACES_HPP_
 
+#include "stats.hpp"
 #include <string>
 #include <vector>
-#include "stats.hpp"
 
 class Race {
- public:
-        Race(const std::string& name, const Stats& bonuses,
-                const std::vector<std::string>& preferredClasses);
+  public:
+    Race(const std::string& name, const Stats& bonuses, const std::vector<std::string>& preferredClasses);
 
-        const std::string& getName() const;
-        const Stats& getBonuses() const;
-        const std::vector<std::string>& getPreferredClasses() const;
+    const std::string& getName() const;
+    const Stats& getBonuses() const;
+    const std::vector<std::string>& getPreferredClasses() const;
 
- private:
-        std::string name;
-        Stats bonuses;
-        std::vector<std::string> preferredClasses;
+  private:
+    std::string name;
+    Stats bonuses;
+    std::vector<std::string> preferredClasses;
 };
 
 extern const Race Astari;

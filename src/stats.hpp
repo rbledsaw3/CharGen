@@ -1,15 +1,19 @@
 #ifndef SRC_STATS_HPP_
 #define SRC_STATS_HPP_
 
-#include <iostream>
 #include "roll.hpp"
+#include <iostream>
 
 class Stats {
- public:
+  public:
     // Constructors
     Stats();
-    Stats(const int &strength, const int &dexterity, const int &constitution,
-          const int &intelligence, const int &wisdom, const int &charisma);
+    Stats(const int& strength,
+          const int& dexterity,
+          const int& constitution,
+          const int& intelligence,
+          const int& wisdom,
+          const int& charisma);
 
     // Getters
     int getStrength() const;
@@ -20,22 +24,25 @@ class Stats {
     int getCharisma() const;
 
     // Setters
-    void setStrength(const int &strength);
-    void setDexterity(const int &dexterity);
-    void setConstitution(const int &constitution);
-    void setIntelligence(const int &intelligence);
-    void setWisdom(const int &wisdom);
-    void setCharisma(const int &charisma);
+    void setStrength(const int& strength);
+    void setDexterity(const int& dexterity);
+    void setConstitution(const int& constitution);
+    void setIntelligence(const int& intelligence);
+    void setWisdom(const int& wisdom);
+    void setCharisma(const int& charisma);
 
-    void setStats(const int &strength, const int &dexterity,
-            const int &constitution, const int &intelligence,
-            const int &wisdom, const int &charisma);
+    void setStats(const int& strength,
+                  const int& dexterity,
+                  const int& constitution,
+                  const int& intelligence,
+                  const int& wisdom,
+                  const int& charisma);
 
-    void setStats(const Stats &stats);
-    void addStats(const Stats &stats);
-    void subtractStats(const Stats &stats);
+    void setStats(const Stats& stats);
+    void addStats(const Stats& stats);
+    void subtractStats(const Stats& stats);
 
- private:
+  private:
     int strength;
     int dexterity;
     int constitution;
@@ -46,10 +53,13 @@ class Stats {
 
 // Global functions for rolling stats
 Stats rolledStats();
-Stats rolledStats(const int &strength, const int &dexterity,
-        const int &constitution, const int &intelligence,
-        const int &wisdom, const int &charisma);
-Stats rolledStats(const Stats &stats);
+Stats rolledStats(const int& strength,
+                  const int& dexterity,
+                  const int& constitution,
+                  const int& intelligence,
+                  const int& wisdom,
+                  const int& charisma);
+Stats rolledStats(const Stats& stats);
 
 std::ostream& operator<<(std::ostream& os, const Stats& stats);
 
