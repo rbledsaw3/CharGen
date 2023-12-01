@@ -1,16 +1,20 @@
 #include "alignment.hpp"
-#include "roll.hpp"
-#include <array>
 
-std::array<std::string, 9> alignment = { "lawful good",     "neutral good", "chaotic good", "lawful neutral", "neutral",
-                                         "chaotic neutral", "lawful evil",  "neutral evil", "chaotic evil" };
-
-std::string getalignment(int index) {
-  return alignment[index];
+Alignment getAlignmentByIndex(const int& index) {
+  std::size_t safeIndex = index % alignmentSize;
+  if (safeIndex < 0) {
+    safeIndex += alignmentSize;
+  }
+  try {
+    return alignments.at(safeIndex);
+  } catch (const std::out_of_range& e) {
+    std::cerr << "Out of range error: " << e.what() << '\n';
+    return alignments.at(0);
+  }
 }
 
-std::string rollrandomalignment() {
-  return getalignment(roll(1, 9));
+Alignment rollRandomAlignment() {
+  return getAlignmentByIndex(roll(DiceQty(1), DiceSides(alignmentSize)));
 }
 
 // TODO(rbledsaw3): Add morality and ethics

@@ -1,27 +1,13 @@
 #include "stats.hpp"
+#include "roll.hpp"
 
-Stats::Stats() {
-  this->strength = 0;
-  this->dexterity = 0;
-  this->constitution = 0;
-  this->intelligence = 0;
-  this->wisdom = 0;
-  this->charisma = 0;
-}
-
-Stats::Stats(const int& strength,
-             const int& dexterity,
-             const int& constitution,
-             const int& intelligence,
-             const int& wisdom,
-             const int& charisma) {
-  this->strength = strength;
-  this->dexterity = dexterity;
-  this->constitution = constitution;
-  this->intelligence = intelligence;
-  this->wisdom = wisdom;
-  this->charisma = charisma;
-}
+Stats::Stats(const StatValues& values)
+  : strength(values.strength),
+    dexterity(values.dexterity),
+    constitution(values.constitution),
+    intelligence(values.intelligence),
+    wisdom(values.wisdom),
+    charisma(values.charisma) {}
 
 int Stats::getStrength() const {
   return this->strength;
@@ -71,82 +57,63 @@ void Stats::setCharisma(const int& charisma) {
   this->charisma = charisma;
 }
 
-void Stats::setStats(const int& strength,
-                     const int& dexterity,
-                     const int& constitution,
-                     const int& intelligence,
-                     const int& wisdom,
-                     const int& charisma) {
-  this->strength = strength;
-  this->dexterity = dexterity;
-  this->constitution = constitution;
-  this->intelligence = intelligence;
-  this->wisdom = wisdom;
-  this->charisma = charisma;
+void Stats::setStats(const StatValues& values) {
+  this->strength = values.strength;
+  this->dexterity = values.dexterity;
+  this->constitution = values.constitution;
+  this->intelligence = values.intelligence;
+  this->wisdom = values.wisdom;
+  this->charisma = values.charisma;
 }
 
-void Stats::setStats(const Stats& stats) {
-  this->strength = stats.getStrength();
-  this->dexterity = stats.getDexterity();
-  this->constitution = stats.getConstitution();
-  this->intelligence = stats.getIntelligence();
-  this->wisdom = stats.getWisdom();
-  this->charisma = stats.getCharisma();
+void Stats::addStats(const StatValues& values) {
+  this->strength += values.strength;
+  this->dexterity += values.dexterity;
+  this->constitution += values.constitution;
+  this->intelligence += values.intelligence;
+  this->wisdom += values.wisdom;
+  this->charisma += values.charisma;
 }
 
-void Stats::addStats(const Stats& stats) {
-  this->strength += stats.getStrength();
-  this->dexterity += stats.getDexterity();
-  this->constitution += stats.getConstitution();
-  this->intelligence += stats.getIntelligence();
-  this->wisdom += stats.getWisdom();
-  this->charisma += stats.getCharisma();
-}
-
-void Stats::subtractStats(const Stats& stats) {
-  this->strength -= stats.getStrength();
-  this->dexterity -= stats.getDexterity();
-  this->constitution -= stats.getConstitution();
-  this->intelligence -= stats.getIntelligence();
-  this->wisdom -= stats.getWisdom();
-  this->charisma -= stats.getCharisma();
+void Stats::subtractStats(const StatValues& values) {
+  this->strength -= values.strength;
+  this->dexterity -= values.dexterity;
+  this->constitution -= values.constitution;
+  this->intelligence -= values.intelligence;
+  this->wisdom -= values.wisdom;
+  this->charisma -= values.charisma;
 }
 
 Stats rolledStats() {
   Stats stats;
-  stats.setStrength(roll(3, 6));
-  stats.setDexterity(roll(3, 6));
-  stats.setConstitution(roll(3, 6));
-  stats.setIntelligence(roll(3, 6));
-  stats.setWisdom(roll(3, 6));
-  stats.setCharisma(roll(3, 6));
+  stats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides)));
+  stats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides)));
+  stats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides)));
+  stats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides)));
+  stats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides)));
+  stats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides)));
   return stats;
 }
 
-Stats rolledStats(const int& strength,
-                  const int& dexterity,
-                  const int& constitution,
-                  const int& intelligence,
-                  const int& wisdom,
-                  const int& charisma) {
+Stats rolledStats(const StatValues& values) {
   Stats stats;
-  stats.setStrength(roll(3, 6) + strength);
-  stats.setDexterity(roll(3, 6) + dexterity);
-  stats.setConstitution(roll(3, 6) + constitution);
-  stats.setIntelligence(roll(3, 6) + intelligence);
-  stats.setWisdom(roll(3, 6) + wisdom);
-  stats.setCharisma(roll(3, 6) + charisma);
+  stats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.strength);
+  stats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.dexterity);
+  stats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.constitution);
+  stats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.intelligence);
+  stats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.wisdom);
+  stats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.charisma);
   return stats;
 }
 
 Stats rolledStats(const Stats& stats) {
   Stats newStats;
-  newStats.setStrength(roll(3, 6) + stats.getStrength());
-  newStats.setDexterity(roll(3, 6) + stats.getDexterity());
-  newStats.setConstitution(roll(3, 6) + stats.getConstitution());
-  newStats.setIntelligence(roll(3, 6) + stats.getIntelligence());
-  newStats.setWisdom(roll(3, 6) + stats.getWisdom());
-  newStats.setCharisma(roll(3, 6) + stats.getCharisma());
+  newStats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getStrength());
+  newStats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getDexterity());
+  newStats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getConstitution());
+  newStats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getIntelligence());
+  newStats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getWisdom());
+  newStats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getCharisma());
   return newStats;
 }
 

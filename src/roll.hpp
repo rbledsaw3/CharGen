@@ -5,19 +5,29 @@
 #include <random>
 #include <type_traits>
 
+struct DiceQty {
+    int value;
+    explicit DiceQty(int value)
+      : value(value) {};
+};
+
+struct DiceSides {
+    int value;
+    explicit DiceSides(int value)
+      : value(value) {};
+};
+
 struct RollResultProxy {
-    int diceQty;
-    int diceSides;
+    DiceQty diceQty;
+    DiceSides diceSides;
     int result;
 
-    // Constructor
-    RollResultProxy(int diceQty, int diceSides, int result)
+    RollResultProxy(DiceQty diceQty, DiceSides diceSides, int result)
       : diceQty(diceQty),
         diceSides(diceSides),
         result(result) {}
 
-    // Implicit conversion to int when not used in ostream
-    operator int() const {
+    explicit operator int() const {
       return result;
     }
 };
@@ -37,10 +47,10 @@ template<int diceQty, int diceSides> RollResultProxy roll() {
     results += dist(rDev);
   }
 
-  return RollResultProxy(diceQty, diceSides, results);
+  return { DiceQty(diceQty), DiceSides(diceSides), results };
 }
 
-int roll(int diceQty, int diceSides);
+int roll(DiceQty diceQty, DiceSides diceSides);
 
 std::ostream& operator<<(std::ostream& out, const RollResultProxy& roll);
 

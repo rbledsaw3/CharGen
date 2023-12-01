@@ -6,41 +6,44 @@
 
 class Cls {
   public:
-    Cls(const std::string& name, const Stats& minStats, const int& hitDie);
+    Cls(std::string name, const StatValues& minStats, const int& hitDie);
 
+    [[nodiscard]]
     const std::string& getName() const;
-    const Stats& getMinStats() const;
+    [[nodiscard]]
+    const StatValues& getMinStats() const;
+    [[nodiscard]]
     const int& getHitDie() const;
 
   private:
     std::string name;
-    Stats minStats;
+    StatValues minStats;
     int hitDie;
 };
 
-extern const Cls Alchemist;
-extern const Cls Amazon;
-extern const Cls AnimalTrainer;
-extern const Cls Assassin;
-extern const Cls Barbarian;
-extern const Cls Bard;
-extern const Cls Beggar;
-extern const Cls Berzerker;
-extern const Cls BountyHunter;
-extern const Cls Cleric;
-extern const Cls Druid;
-extern const Cls Fighter;
-extern const Cls Illusionist;
-extern const Cls Knight;
-extern const Cls MagicUser;
-extern const Cls Monk;
-extern const Cls Paladin;
-extern const Cls Ranger;
-extern const Cls Sage;
-extern const Cls Samurai;
-extern const Cls Thief;
-extern const Cls Valkyrie;
-extern const Cls Viking;
-extern const Cls Witch;
+const Cls& getAlchemist();
+const Cls& getAmazon();
+const Cls& getAnimalTrainer();
+const Cls& getAssassin();
+const Cls& getBarbarian();
+const Cls& getBard();
+const Cls& getBeggar();
+const Cls& getBerzerker();
+const Cls& getBountyHunter();
+const Cls& getCleric();
+const Cls& getDruid();
+const Cls& getFighter();
+const Cls& getIllusionist();
+const Cls& getKnight();
+const Cls& getMagicUser();
+const Cls& getMonk();
+const Cls& getPaladin();
+const Cls& getRanger();
+const Cls& getSage();
+const Cls& getSamurai();
+const Cls& getThief();
+const Cls& getValkyrie();
+const Cls& getViking();
+const Cls& getWitch();
 
 #endif  // SRC_CLS_HPP_

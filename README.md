@@ -4,6 +4,8 @@
 
 This framework enables easy generation of races, classes, and PC/NPCs.
 
+###NOTE: much needs updated on this README.md with the last commit. Need to update this documentation later.
+
 ## Table of Contents
 1. [RPG Character Generation Framework](#rpg-character-generation-framework)
 2. [Dice Rolling Mechanism](#dice-rolling-mechanism)
@@ -33,11 +35,11 @@ To roll dice using this system, include the `roll.h` header in your file and use
 
 int main() {
     // Roll three six-sided dice
-    int result = roll(3, 6);
+    int result = roll(DiceQty(3), DiceSides(6));
     std::cout << "Result of rolling 3d6: " << result << std::endl;
 
     // Roll with invalid values, to see error handling
-    result = roll(0, 1); // This will default to rolling 1d2
+    result = roll(DiceQty(0), DiceSides(1));
     std::cout << "Result of rolling with default correction: " << result << std::endl;
 
     return 0;

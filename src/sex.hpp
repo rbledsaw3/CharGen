@@ -10,13 +10,18 @@
 #define N_MALE_NAMES   1000
 #define N_FEMALE_NAMES 511
 
+enum Sex_t { MALE, FEMALE };
+
 class Sex {
   public:
-    Sex(const std::string& name, const std::string& gender, const Stats& bonuses);
+    Sex(std::string name, const Sex_t& gender, const StatValues& bonuses);
 
+    [[nodiscard]]
     const std::string& getName() const;
-    const std::string& getGender() const;
-    const Stats& getBonuses() const;
+    [[nodiscard]]
+    const Sex_t& getGender() const;
+    [[nodiscard]]
+    const StatValues& getBonuses() const;
 
     static constexpr std::array<std::string_view, N_MALE_NAMES> maleNames = {
       "Aaby",       "Aage",        "Aanon",        "Aarlen",      "Aart",         "Achim",        "Adair",
@@ -240,14 +245,14 @@ class Sex {
     }
 
     static Sex rollRandomName();
-    static std::string rollRandomName(const std::string& gender);
+    static std::string rollRandomName(const Sex_t& gender);
 
   private:
     std::string name;
-    std::string gender;
-    Stats bonuses;
+    Sex_t gender;
+    StatValues bonuses;
 };
 
-std::ostream& operator<<(std::ostream& os, const Sex& sex);
+std::ostream& operator<<(std::ostream& out, const Sex& sex);
 
 #endif  // SRC_SEX_HPP_

@@ -1,26 +1,38 @@
 #ifndef SRC_STATS_HPP_
 #define SRC_STATS_HPP_
 
-#include "roll.hpp"
 #include <iostream>
+
+const int statDieQty { 3 };
+const int statDieSides { 6 };
+
+struct StatValues {
+    int strength;
+    int dexterity;
+    int constitution;
+    int intelligence;
+    int wisdom;
+    int charisma;
+};
 
 class Stats {
   public:
     // Constructors
-    Stats();
-    Stats(const int& strength,
-          const int& dexterity,
-          const int& constitution,
-          const int& intelligence,
-          const int& wisdom,
-          const int& charisma);
+    Stats() = default;
+    explicit Stats(const StatValues& values);
 
     // Getters
+    [[nodiscard]]
     int getStrength() const;
+    [[nodiscard]]
     int getDexterity() const;
+    [[nodiscard]]
     int getConstitution() const;
+    [[nodiscard]]
     int getIntelligence() const;
+    [[nodiscard]]
     int getWisdom() const;
+    [[nodiscard]]
     int getCharisma() const;
 
     // Setters
@@ -31,36 +43,24 @@ class Stats {
     void setWisdom(const int& wisdom);
     void setCharisma(const int& charisma);
 
-    void setStats(const int& strength,
-                  const int& dexterity,
-                  const int& constitution,
-                  const int& intelligence,
-                  const int& wisdom,
-                  const int& charisma);
-
-    void setStats(const Stats& stats);
-    void addStats(const Stats& stats);
-    void subtractStats(const Stats& stats);
+    void setStats(const StatValues& values);
+    void addStats(const StatValues& values);
+    void subtractStats(const StatValues& values);
 
   private:
-    int strength;
-    int dexterity;
-    int constitution;
-    int intelligence;
-    int wisdom;
-    int charisma;
+    int strength { 0 };
+    int dexterity { 0 };
+    int constitution { 0 };
+    int intelligence { 0 };
+    int wisdom { 0 };
+    int charisma { 0 };
 };
 
 // Global functions for rolling stats
 Stats rolledStats();
-Stats rolledStats(const int& strength,
-                  const int& dexterity,
-                  const int& constitution,
-                  const int& intelligence,
-                  const int& wisdom,
-                  const int& charisma);
+Stats rolledStats(const StatValues& values);
 Stats rolledStats(const Stats& stats);
 
-std::ostream& operator<<(std::ostream& os, const Stats& stats);
+std::ostream& operator<<(std::ostream& out, const Stats& stats);
 
 #endif  // SRC_STATS_HPP_

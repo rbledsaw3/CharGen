@@ -1,8 +1,8 @@
 #include "sex.hpp"
 #include "roll.hpp"
 
-Sex::Sex(const std::string& name, const std::string& gender, const Stats& bonuses)
-  : name(name),
+Sex::Sex(std::string name, const Sex_t& gender, const StatValues& bonuses)
+  : name(std::move(name)),
     gender(gender),
     bonuses(bonuses) {}
 
@@ -10,34 +10,36 @@ const std::string& Sex::getName() const {
   return name;
 }
 
-const std::string& Sex::getGender() const {
+const Sex_t& Sex::getGender() const {
   return gender;
 }
 
-const Stats& Sex::getBonuses() const {
+const StatValues& Sex::getBonuses() const {
   return bonuses;
 }
 
 Sex Sex::rollRandomName() {
-  int genderChoice = roll(1, 2);
+  int genderChoice = roll(DiceQty(1), DiceSides(2));
 
   if (genderChoice == 1) {
-    int index = roll(1, N_MALE_NAMES) - 1;
-    return Sex(std::string(getMaleNames()[index]), "Female", { -2, -2, -2, 2, 0, 4 });
-  } else {
-    int index = roll(1, N_FEMALE_NAMES) - 1;
-    return Sex(std::string(getFemaleNames()[index]), "Male", { 2, 0, 0, 0, 2, 0 });
+    int index = roll(DiceQty(1), DiceSides(N_MALE_NAMES)) - 1;
+    return {
+      std::string(getMaleNames().at(index)), Sex_t::FEMALE, {-2, -2, -2, 2, 0, 4}
+    };
   }
+  int index = roll(DiceQty(1), DiceSides(N_FEMALE_NAMES)) - 1;
+  return {
+    std::string(getFemaleNames().at(index)), Sex_t::MALE, {2, 0, 0, 0, 2, 0}
+  };
 }
 
-std::string Sex::rollRandomName(const std::string& gender) {
-  if (gender == "Male") {
-    int index = roll(1, N_MALE_NAMES) - 1;
-    return std::string(getMaleNames()[index]);
-  } else {
-    int index = roll(1, N_FEMALE_NAMES) - 1;
-    return std::string(getFemaleNames()[index]);
+std::string Sex::rollRandomName(const Sex_t& gender) {
+  if (gender == Sex_t::MALE) {
+    int index = roll(DiceQty(1), DiceSides(N_MALE_NAMES)) - 1;
+    return std::string(getMaleNames().at(index));
   }
+  int index = roll(DiceQty(1), DiceSides(N_FEMALE_NAMES)) - 1;
+  return std::string(getFemaleNames().at(index));
 }
 
 std::ostream& operator<<(std::ostream& out, const Sex& sex) {
