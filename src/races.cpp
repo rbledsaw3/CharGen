@@ -1,6 +1,8 @@
 #include "races.hpp"
 
-Race::Race(std::string name, const StatValues& bonuses, const std::vector<std::string>& preferredClasses)
+Race::Race(std::string name,
+           const StatValues& bonuses,
+           const std::vector<std::string>& preferredClasses)
   : name(std::move(name)),
     bonuses(bonuses),
     preferredClasses(preferredClasses) {}
@@ -18,12 +20,14 @@ const std::vector<std::string>& Race::getPreferredClasses() const {
 }
 
 const Race& getAstari() {
-  static const Race instance("Astari", { -2, 2, 0, 2, -2, 0 }, { "Magic User", "Thief" });
+  static const Race instance(
+    "Astari", { -2, 2, 0, 2, -2, 0 }, { "Magic User", "Thief" });
   return instance;
 }
 
 const Race& getBardik() {
-  static const Race instance("Bardik", { -2, 0, 0, 0, -2, 4 }, { "Bard", "Witch" });
+  static const Race instance(
+    "Bardik", { -2, 0, 0, 0, -2, 4 }, { "Bard", "Witch" });
   return instance;
 }
 
@@ -33,7 +37,8 @@ const Race& getConfed() {
 }
 
 const Race& getDemiGiant() {
-  static const Race instance("Demi-Giant", { 8, -2, -2, -2, 4, -2 }, { "Barbarian", "Cleric" });
+  static const Race instance(
+    "Demi-Giant", { 8, -2, -2, -2, 4, -2 }, { "Barbarian", "Cleric" });
   return instance;
 }
 
@@ -63,7 +68,8 @@ const Race& getHalfElf() {
 }
 
 const Race& getHalfOrc() {
-  static const Race instance("Half-Orc", { 2, -2, 0, 0, 0, -2 }, { "Barbarian" });
+  static const Race instance(
+    "Half-Orc", { 2, -2, 0, 0, 0, -2 }, { "Barbarian" });
   return instance;
 }
 
@@ -78,7 +84,8 @@ const Race& getHuman() {
 }
 
 const Race& getLunari() {
-  static const Race instance("Lunari", { -2, 2, 2, 2, 0, 0 }, { "Sage", "Magic User", "Druid" });
+  static const Race instance(
+    "Lunari", { -2, 2, 2, 2, 0, 0 }, { "Sage", "Magic User", "Druid" });
   return instance;
 }
 
@@ -88,11 +95,13 @@ const Race& getOrc() {
 }
 
 const Race& getSolari() {
-  static const Race instance("Solari", { 2, 0, 2, 0, 0, 2 }, { "Fighter", "Paladin", "Cleric" });
+  static const Race instance(
+    "Solari", { 2, 0, 2, 0, 0, 2 }, { "Fighter", "Paladin", "Cleric" });
   return instance;
 }
 
 const Race& getSwertling() {
-  static const Race instance("Swertling", { 0, -2, -2, 0, 0, -2 }, { "Barbarian", "Cleric" });
+  static const Race instance(
+    "Swertling", { 0, -2, -2, 0, 0, -2 }, { "Barbarian", "Cleric" });
   return instance;
 }

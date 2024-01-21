@@ -97,23 +97,35 @@ Stats rolledStats() {
 
 Stats rolledStats(const StatValues& values) {
   Stats stats;
-  stats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.strength);
-  stats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.dexterity);
-  stats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.constitution);
-  stats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.intelligence);
-  stats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.wisdom);
-  stats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + values.charisma);
+  stats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                    + values.strength);
+  stats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                     + values.dexterity);
+  stats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                        + values.constitution);
+  stats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                        + values.intelligence);
+  stats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                  + values.wisdom);
+  stats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                    + values.charisma);
   return stats;
 }
 
 Stats rolledStats(const Stats& stats) {
   Stats newStats;
-  newStats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getStrength());
-  newStats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getDexterity());
-  newStats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getConstitution());
-  newStats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getIntelligence());
-  newStats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getWisdom());
-  newStats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides)) + stats.getCharisma());
+  newStats.setStrength(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                       + stats.getStrength());
+  newStats.setDexterity(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                        + stats.getDexterity());
+  newStats.setConstitution(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                           + stats.getConstitution());
+  newStats.setIntelligence(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                           + stats.getIntelligence());
+  newStats.setWisdom(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                     + stats.getWisdom());
+  newStats.setCharisma(roll(DiceQty(statDieQty), DiceSides(statDieSides))
+                       + stats.getCharisma());
   return newStats;
 }
 

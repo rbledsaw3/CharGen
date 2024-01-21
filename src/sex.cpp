@@ -24,7 +24,9 @@ Sex Sex::rollRandomName() {
   if (genderChoice == 1) {
     int index = roll(DiceQty(1), DiceSides(N_MALE_NAMES)) - 1;
     return {
-      std::string(getMaleNames().at(index)), Sex_t::FEMALE, {-2, -2, -2, 2, 0, 4}
+      std::string(getMaleNames().at(index)),
+      Sex_t::FEMALE,
+      {-2, -2, -2, 2, 0, 4}
     };
   }
   int index = roll(DiceQty(1), DiceSides(N_FEMALE_NAMES)) - 1;

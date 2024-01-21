@@ -7,7 +7,9 @@
 
 class Race {
   public:
-    Race(std::string name, const StatValues& bonuses, const std::vector<std::string>& preferredClasses);
+    Race(std::string name,
+         const StatValues& bonuses,
+         const std::vector<std::string>& preferredClasses);
 
     [[nodiscard]]
     const std::string& getName() const;

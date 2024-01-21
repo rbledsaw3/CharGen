@@ -2,11 +2,13 @@
 
 int roll(DiceQty diceQty, DiceSides diceSides) {
   if (diceQty.value < 1) {
-    std::cerr << "Error: dice quantity cannot be less than 1. Defaulting to 1." << std::endl;
+    std::cerr << "Error: dice quantity cannot be less than 1. Defaulting to 1."
+              << std::endl;
     diceQty.value = 1;
   }
   if (diceSides.value < 2) {
-    std::cerr << "Error: dice sides cannot be less than 2. Defaulting to 2." << std::endl;
+    std::cerr << "Error: dice sides cannot be less than 2. Defaulting to 2."
+              << std::endl;
     diceSides.value = 2;
   }
 
@@ -25,6 +27,7 @@ int roll(DiceQty diceQty, DiceSides diceSides) {
 }
 
 std::ostream& operator<<(std::ostream& out, const RollResultProxy& roll) {
-  out << "Rolled" << roll.diceQty.value << "d" << roll.diceSides.value << ": " << roll.result;
+  out << "Rolled" << roll.diceQty.value << "d" << roll.diceSides.value << ": "
+      << roll.result;
   return out;
 }
